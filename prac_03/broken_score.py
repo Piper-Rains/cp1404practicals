@@ -2,6 +2,7 @@
 CP1404/CP5632 - Practical
 Broken program to determine score status
 """
+import random
 
 
 def main():
@@ -21,5 +22,9 @@ def determine_score_status(score):
     else:
         return "Bad"
 
+
+score = random.randint(0, 100)
+print(score)
+print(determine_score_status(score))
 
 main()
