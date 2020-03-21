@@ -10,11 +10,12 @@ def main():
 
     data = get_data()
     print(data)
+    display_subject_details(data)
 
 
 def get_data():
     """Read data from file formatted like: subject,lecturer,number of students."""
-    data_list = []
+    data = []
     input_file = open(FILENAME)
     for line in input_file:
         print(line)  # See what a line looks like
@@ -24,10 +25,15 @@ def get_data():
         print(parts)  # See what the parts look like (notice the integer is a string)
         parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
         print(parts)  # See if that worked
-        data_list.append(parts)
+        data.append(parts)
         print("----------")
-    return data_list
+    return data
     input_file.close()
+
+
+def display_subject_details(data):
+    for subject_details in data:
+        print("{} is taught by {} and has {} students".format(*subject_details))
 
 
 main()
