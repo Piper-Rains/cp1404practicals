@@ -1,3 +1,4 @@
+
 import random
 
 NUMBERS_IN_LINE = 6
