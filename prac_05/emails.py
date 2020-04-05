@@ -10,6 +10,9 @@ def main():
         email_to_name[email] = name
         email = input("Email: ")
 
+    for email, name in email_to_name.items():
+        print("{0} ({1})".format(name, email))
+
 
 def get_name_in_email(email):
     username = email.split('@')[0]
