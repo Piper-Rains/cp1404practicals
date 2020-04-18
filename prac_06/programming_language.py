@@ -13,3 +13,7 @@ class ProgrammingLanguage:
         """Check if the programming language is dynamically typed or not"""
         return self.typing == "Dynamic"
 
+    def __str__(self):
+        """Return a string to display ProgrammingLanguage information"""
+        return "{}, {} Typing, Reflection={}, First appeared in {}".format(
+            self.name, self.typing, self.reflection, self.year)
