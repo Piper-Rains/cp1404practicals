@@ -2,7 +2,7 @@
 class ProgrammingLanguage:
     """A simple class to compare different programing languages"""
 
-    def __int__(self, name, typing, reflection, year):
+    def __init__(self, name, typing, reflection, year):
         """Create fields for given programming language"""
         self.name = name
         self.typing = typing
