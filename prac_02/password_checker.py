@@ -61,4 +61,5 @@ def is_valid_password(password):
     # if we get here (without returning False), then the password must be valid
     return True
 
+
 main()
