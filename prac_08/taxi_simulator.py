@@ -28,7 +28,7 @@ def main():
         elif menu_selection == "d":
             if current_taxi != "":
                 current_taxi.start_fare()
-                distance_to_drive = float(input("Drive how far? "))
+                distance_to_drive = receive_distance_to_drive()
                 current_taxi.drive(distance_to_drive)
                 trip_cost = current_taxi.get_fare()
                 print("Your {} trip cost you ${:.2f}".format(current_taxi.name, trip_cost))
@@ -77,6 +77,21 @@ def receive_taxi_choice(taxis):
         else:
             break
     return taxi_choice
+
+
+def receive_distance_to_drive():
+    """ Receive driving distance with error checking """
+    while True:
+        try:
+            distance_to_drive = float(input("Drive how far? "))
+            while distance_to_drive < 0:
+                print("Distance must be >= 0")
+                distance_to_drive = float(input("Drive how far? "))
+        except ValueError:
+            print("Invalid input; enter a valid number")
+        else:
+            break
+    return distance_to_drive
 
 
 main()
